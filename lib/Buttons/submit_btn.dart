@@ -16,7 +16,7 @@ class SubmitBtn extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            'SUBMIT',
+            'ثبت',
             style: TextStyle(
               color: Colors.white,
               fontSize: 16,

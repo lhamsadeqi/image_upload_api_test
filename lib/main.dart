@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: 'IRANSans',
         scaffoldBackgroundColor: Colors.grey.shade900,
         primarySwatch: Colors.blue,
       ),
@@ -35,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 0,
         backgroundColor: Colors.grey.shade900,
         title: Text(
-          'Image Uploader',
+          'بیمه',
+          textAlign: TextAlign.center,
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
