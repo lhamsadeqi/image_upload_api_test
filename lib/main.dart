@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import './screens/upload_image_screen.dart';
+import 'package:testing/screens/insured_list_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         centerTitle: true,
       ),
-      body: UploadImageScreen(),
+      body: InsuredListScreen(),
     );
   }
 }

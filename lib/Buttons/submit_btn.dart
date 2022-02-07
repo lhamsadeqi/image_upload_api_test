@@ -3,10 +3,15 @@
 import 'package:flutter/material.dart';
 
 class SubmitBtn extends StatelessWidget {
+  final onTap;
+
+  SubmitBtn({this.onTap});
+
+  //...
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: onTap,
       child: Container(
         width: double.infinity,
         height: 50,

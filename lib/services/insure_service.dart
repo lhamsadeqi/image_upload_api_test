@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:dio/dio.dart';
 import '../constant/api.dart';
 import '../models/insurer_model.dart';
