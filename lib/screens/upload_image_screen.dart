@@ -57,8 +57,26 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
     );
   }
 
+  bool loading = false;
+
   sendAction() async {
-    FilesService.addFiles(images: _images, id: widget.insurerModel!.id!);
+    try {
+      setState(() {
+        loading = true;
+      });
+
+      await FilesService.addFiles(
+          images: _images, id: widget.insurerModel!.id!);
+
+      setState(() {
+        loading = false;
+      });
+    } catch (e) {
+      setState(() {
+        loading = false;
+      });
+      print(e.toString());
+    }
   }
 
   @override
@@ -91,6 +109,7 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
             SizedBox(height: 20),
             SubmitBtn(
               onTap: () => sendAction(),
+              loading: loading,
             ),
             SizedBox(height: 25),
           ],

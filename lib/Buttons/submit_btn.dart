@@ -4,14 +4,15 @@ import 'package:flutter/material.dart';
 
 class SubmitBtn extends StatelessWidget {
   final onTap;
+  final loading;
 
-  SubmitBtn({this.onTap});
+  SubmitBtn({this.onTap, this.loading});
 
   //...
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: loading ? null : onTap,
       child: Container(
         width: double.infinity,
         height: 50,
@@ -19,16 +20,22 @@ class SubmitBtn extends StatelessWidget {
           color: Color(0xff9146FF),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
-          child: Text(
-            'ثبت',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        child: loading
+            ? Center(
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                ),
+              )
+            : Center(
+                child: Text(
+                  'ثبت',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
       ),
     );
   }

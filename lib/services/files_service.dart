@@ -1,6 +1,8 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class FilesService {
   static addFiles({
@@ -47,11 +49,35 @@ class FilesService {
       print(response.statusCode);
 
       if (response.statusCode == 200) {
+        Fluttertoast.showToast(
+            msg: "با موفقیت ثبت شد",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.green,
+            textColor: Colors.white,
+            fontSize: 16.0);
         return true;
       } else {
+        Fluttertoast.showToast(
+            msg: "خطا در برقراری ارتباط با سرور",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.CENTER,
+            timeInSecForIosWeb: 1,
+            backgroundColor: Colors.red,
+            textColor: Colors.white,
+            fontSize: 16.0);
         throw Exception('خطا در برقراری ارتباط با سرور');
       }
     } catch (e) {
+      Fluttertoast.showToast(
+          msg: "خطا در برقراری ارتباط با سرور",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0);
       print(e);
     }
   }
